@@ -103,6 +103,9 @@ function showPost(post) {
     const contact = postCopy.querySelector(".contact");
     contact.textContent = post.contact;
 
+    const preview = postCopy.querySelector(".preview");
+    preview.textContent = post.previews;
+
 
 
 
