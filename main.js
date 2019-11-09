@@ -22,21 +22,26 @@ function init() {
 function getNavigation() {
     fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/categories?per_page=100")
         .then(res => res.json())
-        .then(data=>{
-//        console.log(data)
-        data.forEach(addLink)
-    })
+        .then(data => {
+            //        console.log(data)
+            data.forEach(addLink)
+        })
 
 }
 
-function addLink(oneItem){
-    console.log(oneItem.name)
+function addLink(oneItem) {
+    console.log(oneItem)
+    if(oneItem.parent === 9 && oneItem.count > 0){
     const link = document.createElement("a");
     link.textContent = oneItem.name;
     link.setAttribute("href", "index.html")
     document.querySelector("nav").appendChild(link);
 }
+}
 
+
+
+//-----SEARCH STUFF
 
 function getSearchData() {
 
@@ -54,6 +59,9 @@ function getFrontPageData() {
         .then(res => res.json())
         .then(handleData)
 }
+
+
+//-------SUB PAGE STUFF
 
 
 function getSinglePost() {
@@ -91,6 +99,9 @@ function getSinglePost() {
 
 
 }
+
+
+//-------TEMPLATE STUFF
 
 
 function handleData(myData) {
