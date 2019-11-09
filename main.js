@@ -15,7 +15,28 @@ function init() {
         getFrontPageData();
     }
 
+    getNavigation()
+
 }
+
+function getNavigation() {
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/categories?per_page=100")
+        .then(res => res.json())
+        .then(data=>{
+//        console.log(data)
+        data.forEach(addLink)
+    })
+
+}
+
+function addLink(oneItem){
+    console.log(oneItem.name)
+    const link = document.createElement("a");
+    link.textContent = oneItem.name;
+    link.setAttribute("href", "index.html")
+    document.querySelector("nav").appendChild(link);
+}
+
 
 function getSearchData() {
 
@@ -41,15 +62,31 @@ function getSinglePost() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
 
-    console.log(id)
 
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/volunteer/" + id+"?_embed")
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/volunteer/" + id + "?_embed")
         .then(res => res.json())
-        .then(showPost)
+        .then(showSinglePost)
 
-    function showPost(post) {
+    function showSinglePost(post) {
         console.log(post)
         document.querySelector("article h1").innerHTML = post.title.rendered
+        const imgPath = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url
+        const img = document.querySelector(".image img")
+        img.setAttribute("src", imgPath)
+        img.setAttribute("alt", "Featured image" + post.title.rendered);
+
+        const bodyCopy = document.querySelector(".bodycopy");
+        bodyCopy.innerHTML = post.content.rendered;
+
+        const venue = document.querySelector(".venue span");
+        venue.textContent = post.venue;
+
+        const resp = document.querySelector(".responsibilities");
+        resp.textContent = post.responsibilities;
+
+        const contact = document.querySelector(".contact");
+        contact.textContent = post.contact;
+
     }
 
 
@@ -57,7 +94,7 @@ function getSinglePost() {
 
 
 function handleData(myData) {
-    console.log(myData);
+
 
     //1 loop
     myData.forEach(showPost);
@@ -65,10 +102,10 @@ function handleData(myData) {
 
 function showPost(post) {
 
-    console.log(post)
+
     const imgPath = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url
 
-    console.log(imgPath)
+
 
     //    2.Cloning a Template
     const template = document.querySelector(".postTemplate").content;
@@ -89,25 +126,8 @@ function showPost(post) {
     a.href = "sub.html?id=" + post.id
 
 
-
-    const bodyCopy = postCopy.querySelector(".bodycopy");
-    bodyCopy.innerHTML = post.content.rendered;
-
-
-    const venue = postCopy.querySelector(".venue span");
-    venue.textContent = post.venue;
-
-    const resp = postCopy.querySelector(".responsibilities");
-    resp.textContent = post.responsibilities;
-
-    const contact = postCopy.querySelector(".contact");
-    contact.textContent = post.contact;
-
     const preview = postCopy.querySelector(".preview");
     preview.textContent = post.previews;
-
-
-
 
 
 

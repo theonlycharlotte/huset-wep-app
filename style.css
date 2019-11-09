@@ -16,10 +16,19 @@ body {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.4em;
 }
 
 h2 {
     font-size: 1.2em;
+}
+
+h3 {
+    font-size: 2.2em;
+}
+
+a {
+    text-decoration:underline;
+    color: #F25244;
 }
 
