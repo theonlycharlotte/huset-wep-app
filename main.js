@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", init);
 const urlParams = new URLSearchParams(window.location.search);
 const search = urlParams.get("search");
 const id = urlParams.get("id");
+const category = urlParams.get("category");
 
 
 
@@ -11,6 +12,10 @@ function init() {
         getSearchData();
     } else if (id) {
         getSinglePost();
+    } else if (category) {
+
+        getCategoryData(category)
+
     } else {
         getFrontPageData();
     }
@@ -30,13 +35,12 @@ function getNavigation() {
 }
 
 function addLink(oneItem) {
-    console.log(oneItem)
-    if(oneItem.parent === 9 && oneItem.count > 0){
-    const link = document.createElement("a");
-    link.textContent = oneItem.name;
-    link.setAttribute("href", "index.html")
-    document.querySelector("nav").appendChild(link);
-}
+    if (oneItem.parent === 9 && oneItem.count > 0) {
+        const link = document.createElement("a");
+        link.textContent = oneItem.name;
+        link.setAttribute("href", "category.html?category=" + oneItem.id)
+        document.querySelector("nav").appendChild(link);
+    }
 }
 
 
@@ -54,8 +58,14 @@ function getSearchData() {
 }
 
 function getFrontPageData() {
-    console.log("getData");
     fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/volunteer?_embed")
+        .then(res => res.json())
+        .then(handleData)
+}
+
+function getCategoryData(catId) {
+    console.log("catId");
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/volunteer?_embed&categories="+catId)
         .then(res => res.json())
         .then(handleData)
 }
