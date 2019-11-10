@@ -39,7 +39,7 @@ function addLink(oneItem) {
         const link = document.createElement("a");
         link.textContent = oneItem.name;
         link.setAttribute("href", "category.html?category=" + oneItem.id)
-        document.querySelector("nav").appendChild(link);
+        document.querySelector(".category-nav").appendChild(link);
     }
 }
 

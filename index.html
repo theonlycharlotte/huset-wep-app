@@ -11,80 +11,160 @@
 
 <body>
 
-    <section>
-<h3> HUSET's Volunteer Values</h3>
-        <p>
-The House-KBH is largely based on voluntary fire-souls who, with their creative, quirky, fun and different ideas create cultural experiences for the House's many guests. We believe that the volunteers help to ensure that the program of the house is versatile and diverse. The house's philosophy is based on involvement and collaboration and we collaborate with a lot of different creative associations and entrepreneurs to create cultural experiences that can not be found anywhere else in Copenhagen. There is therefore ample opportunity to participate and bring new ideas into play as a volunteer in Huset-KBH.
-
-        </p>
-
-
-    </section>
+    <header>
+        <nav class="sticky" id="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-black.svg" style="width: 30%"></a>
+            </div>
 
 
 
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="gallery.html">VOLUNTEER</a></li>
+                <li><a href="about.html">EVENTS</a></li>
+                <li><a href="press.html">FOOD &amp; DRINK</a></li>
+                <li><a href="#contact">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+
+            <form action="search.html">
+                <input name="search" type="search">
+                <input class="button" type="submit" value="search">
+            </form>
+
+            <div class="nav-burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+       <section class="hero">
+
+          <div class="intro">
+              <h3> Volunteer Opportunitues at HUSET</h3>
+            <p>
+                The House-KBH is largely based on voluntary fire-souls who, with their creative, quirky, fun and different ideas create cultural experiences for the House's many guests. We believe that the volunteers help to ensure that the program of the house is versatile and diverse. The house's philosophy is based on involvement and collaboration and we collaborate with a lot of different creative associations and entrepreneurs to create cultural experiences that can not be found anywhere else in Copenhagen. There is therefore ample opportunity to participate and bring new ideas into play as a volunteer in Huset-KBH.
+
+            </p>
+
+           </div>
+
+        </section>
 
 
 
-    <h1>HUSET</h1>
-    <form action="search.html">
-        <input name="search" type="search">
-        <input class="button" type="submit" value="search">
-    </form>
-
-     <nav>
-        <a href="index.html">All</a>
-    </nav>
 
 
-    <section id="posts">
+        <section>
+            <h3> Volunteer Opportunitues at HUSET</h3>
+            <p>
+                The House-KBH is largely based on voluntary fire-souls who, with their creative, quirky, fun and different ideas create cultural experiences for the House's many guests. We believe that the volunteers help to ensure that the program of the house is versatile and diverse. The house's philosophy is based on involvement and collaboration and we collaborate with a lot of different creative associations and entrepreneurs to create cultural experiences that can not be found anywhere else in Copenhagen. There is therefore ample opportunity to participate and bring new ideas into play as a volunteer in Huset-KBH.
 
-        <template class="postTemplate">
-            <article>
+            </p>
 
-                <figure class="image">
-                    <img src="" alt="">
-                </figure>
-
-
-                <header>
-                    <a href="sub.html?id=51">
-                        <h1>
-                            TITLE GOES HERE
-                        </h1>
-                    </a>
-                </header>
+        </section>
 
 
-                <section class="preview">
-
-                </section>
-
-                <!--
-                <section class="bodycopy">
-                    Body copy
-                </section>
-
-                <section class=venue>
-                    Venue: <span></span>
-                </section>
-
-                <section class="responsibilities">
-                    Responsibilities
-                </section>
-
-                <section class="contact">
-                    Contact
-                </section>
--->
-
-            </article>
-
-        </template>
 
 
-    </section>
+
+
+        <h1>HUSET</h1>
+        <form action="search.html">
+            <input name="search" type="search">
+            <input class="button" type="submit" value="search">
+        </form>
+
+        <div class="category-nav">
+            <a href="index.html">All</a>
+        </div>
+
+
+        <section id="posts">
+
+            <template class="postTemplate">
+                <article>
+
+                    <figure class="image">
+                        <img src="" alt="">
+                    </figure>
+
+
+                    <header>
+                        <a href="sub.html?id=51">
+                            <h1>
+
+                            </h1>
+                        </a>
+                    </header>
+
+
+                    <section class="preview">
+
+                    </section>
+
+                </article>
+
+            </template>
+
+
+        </section>
+
+    </main>
+
+
     <script src="main.js"></script>
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.nav-burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            //    Toggle Nav
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+
+                //Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = ''
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.6}s`;
+                    }
+                });
+
+                //     Burger Animation
+
+                burger.classList.toggle('toggle');
+
+            });
+
+
+        }
+
+        navSlide();
+
+    </script>
+    <script>
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-9vh";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+    </script>
 </body>
 
 </html>
