@@ -17,6 +17,53 @@ body {
     color:  white;
 }
 
+p {
+    font-size: 1.2em;
+}
+
+
+
+section .venue {
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #F25244;
+}
+
+section .venue  span {
+    font-size: 1em;
+    font-weight: 300;
+    color: white;
+
+}
+
+section .responsibilities {
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #F25244;
+
+}
+
+section .responsibilities  span {
+    font-size: 1em;
+    font-weight: 300;
+    color: white;
+}
+
+section .contact {
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #F25244;
+}
+
+section .contact span {
+    font-size: 1em;
+    font-weight: 300;
+    color: white;
+}
+
 .hero {
     margin-top: 9vh;
     background-image: url(images/huset-kbh.jpg);
@@ -25,6 +72,39 @@ body {
     background-position: center center;
     position: relative;
 }
+
+figure img {
+    width: 100%;
+}
+
+.subpage-landing {
+    margin-top: 12vh;
+    padding-bottom: 12vh;
+    padding-top: 11vh;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    .hero {
+    margin-top: 9vh;
+    background-image: url(images/neon-huset.jpg);
+    height: 90vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+
+
+
+}
+
+
+
 
 .intro {
     position: absolute;
@@ -43,8 +123,14 @@ h1 {
     font-size: 1.4em;
 }
 
+h1 .headline {
+    font-size: 2.5em;
+
+}
+
 h2 {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    color: #F25244;
 }
 
 h3 {
@@ -53,7 +139,7 @@ h3 {
 
 a {
     text-decoration:underline;
-    color: purple;
+    color: #808080;
 }
 
 /*----CATEGORIES----*/
@@ -112,13 +198,13 @@ nav {
 
 
 .nav-links a:hover {
-    color: #FE662B;
+    color: white;
 }
 
 .nav-links .current {
 /*    color: rgb(226, 226, 226);*/
     text-decoration: underline;
-    text-decoration-color: #FE662B;
+    text-decoration-color: black;
 }
 
 

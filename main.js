@@ -88,7 +88,7 @@ function getSinglePost() {
     function showSinglePost(post) {
         console.log(post)
         document.querySelector("article h1").innerHTML = post.title.rendered
-        const imgPath = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url
+        const imgPath = post._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url
         const img = document.querySelector(".image img")
         img.setAttribute("src", imgPath)
         img.setAttribute("alt", "Featured image" + post.title.rendered);
@@ -99,10 +99,10 @@ function getSinglePost() {
         const venue = document.querySelector(".venue span");
         venue.textContent = post.venue;
 
-        const resp = document.querySelector(".responsibilities");
+        const resp = document.querySelector(".responsibilities span");
         resp.textContent = post.responsibilities;
 
-        const contact = document.querySelector(".contact");
+        const contact = document.querySelector(".contact span");
         contact.textContent = post.contact;
 
     }

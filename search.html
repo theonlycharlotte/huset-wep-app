@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -10,14 +10,52 @@
 </head>
 
 <body>
-    <h1>HUSET</h1>
+
+        <header>
+        <nav class="sticky" id="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-black.svg" style="width: 30%"></a>
+            </div>
 
 
 
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a class="current" href="index.html">VOLUNTEER</a></li>
+                <li><a href="index.html">EVENTS</a></li>
+                <li><a href="index.html">FOOD &amp; DRINK</a></li>
+                <li><a href="index.html">ABOUT</a></li>
+                <li><a href="index.html">CONTACT</a></li>
+            </ul>
+
+            <form action="search.html">
+                <input name="search" type="search">
+                <input class="button" type="submit" value="search">
+            </form>
+
+            <div class="nav-burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+
+            </div>
+        </nav>
+
+    </header>
+
+
+
+
+<!--
     <form action="search.html">
         <input name="search" type="search">
         <input type="submit" value="search">
     </form>
+-->
+
+    <div class="category-nav">
+        <a href="index.html">All</a>
+    </div>
 
 
 
@@ -32,6 +70,10 @@
                         </h1>
                     </a>
                 </header>
+
+                <figure class="image">
+                    <img src="" alt="">
+                </figure>
 
                 <section class="bodycopy">
                     Body copy
@@ -55,6 +97,12 @@
 
 
 
+                <section class="preview">
+
+                    </section>
+
+
+
             </article>
 
         </template>
@@ -62,6 +110,50 @@
 
     </section>
     <script src="main.js"></script>
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.nav-burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            //    Toggle Nav
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+
+                //Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = ''
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.6}s`;
+                    }
+                });
+
+                //     Burger Animation
+
+                burger.classList.toggle('toggle');
+
+            });
+
+
+        }
+
+        navSlide();
+
+    </script>
+    <script>
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-9vh";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+
+    </script>
 </body>
 
 </html>
