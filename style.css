@@ -6,16 +6,34 @@ font-weight: 300;
 font-style: normal;
 */
 
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
+
+/*font-family: 'Nunito', sans-serif;*/
 
 body {
     margin: 0;
     padding: 0;
     background-color:  black;
-    font-family: futura-pt, sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 300;
     font-style: normal;
     color:  white;
 }
+
+/*-----GRID STYLING-----*/
+
+#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    padding: 2rem;
+    grid-column-gap: 60px;
+    grid-row-gap: 25px;
+    position: relative;
+}
+
+
+
+
 
 p {
     font-size: 1.2em;
@@ -81,7 +99,7 @@ figure img {
     margin-top: 12vh;
     padding-bottom: 12vh;
     padding-top: 11vh;
-    width: 50vw;
+/*    width: 50vw;*/
     margin: 0 auto;
 }
 
@@ -97,10 +115,6 @@ figure img {
     background-position: center center;
     position: relative;
 }
-
-
-
-
 }
 
 
