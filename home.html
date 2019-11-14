@@ -10,18 +10,18 @@
 
 <body>
 
-
     <header>
+
         <nav class="sticky" id="navbar">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.svg" style="width: 30%"></a>
+                <a href="home.html"><img src="images/logo.svg" style="width: 30%"></a>
             </div>
 
 
 
             <ul class="nav-links">
-                <li><a href="home.html">HOME</a></li>
-                <li><a class="current" href="index.html">VOLUNTEER</a></li>
+                <li><a class="current" href="home.html">HOME</a></li>
+                <li><a href="index.html">VOLUNTEER</a></li>
                 <li><a href="index.html">EVENTS</a></li>
                 <li><a href="index.html">FOOD &amp; DRINK</a></li>
                 <li><a href="index.html">ABOUT</a></li>
@@ -41,62 +41,31 @@
             </div>
         </nav>
 
+
+
     </header>
+    <main>
 
+        <section class="stage">
 
+            <div class="home-intro">
+                <h1>Volunteer at Huset</h1>
+                <p>Do you want to Volunteer with us? Discover all the exciting volunteer opportunities Huset offers to suit every personality and interest.</p>
+                <a href="index.html"><button>YES I WANT TO KNOW MORE</button></a>
 
+            </div>
 
-    <section class="subpage-landing">
-
-        <div class="category-nav">
-            <a href="index.html">All</a>
-        </div>
-
-
-
-        <section id="posts">
-
-            <article>
-
-                <header>
-                    <a href="sub.html?id=51">
-                        <h1>
-                            TITLE GOES HERE
-                        </h1>
-                    </a>
-                </header>
-
-                <figure class="image">
-                    <img src="" alt="">
-                </figure>
-
-
-
-                <section class="bodycopy">
-
-                </section>
-
-                <section class=venue>
-                    Venue: <span></span>
-                </section>
-
-                <section class="responsibilities">
-                    Responsibilities: <span></span>
-                </section>
-
-                <section class="contact">
-                    Contact: <span></span>
-                </section>
-
-            </article>
-
-
+            <div class="big-logo">
+                <img src="images/big-logo.svg" style="width: 14vw">
+            </div>
 
 
         </section>
 
 
-    </section>
+
+
+    </main>
 
     <footer>
         <div>
@@ -174,7 +143,7 @@
 
     </footer>
 
-    <script src="main.js"></script>
+
     <script>
         const navSlide = () => {
             const burger = document.querySelector('.nav-burger');
@@ -213,7 +182,7 @@
             if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
                 document.getElementById("navbar").style.top = "0";
             } else {
-                document.getElementById("navbar").style.top = "-9vh";
+                document.getElementById("navbar").style.top = "-10vh";
             }
             prevScrollpos = currentScrollPos;
         }
