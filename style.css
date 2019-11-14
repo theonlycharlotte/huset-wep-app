@@ -14,21 +14,104 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    font-family: 'Nunito', sans-serif;
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
     font-weight: 300;
     font-style: normal;
     color: white;
 }
 
+input[type=search] {
+    background-color: white;
+    border-style: solid;
+    color: black;
+    border-width: 1px;
+    height: 22px;
+    border-radius: 6px;
+
+
+}
+
+input[type=submit] {
+
+    background-color: black;
+    border-style: solid;
+    color: white;
+    padding: 0px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 0.8rem;
+
+
+}
+
 .stage {
     width: 100%;
     height: 100vh;
-    background-image: url(images/stage.jpeg);
+    background-image: url(images/main-image.jpg);
     background-size: cover;
     background-position: center center;
 }
 
+.home-intro {
+    position: absolute;
+    width: 40vw;
+    left: 35%;
+    top: 63%;
+    transform: translate(-50%, -50%);
+}
+
+.home-intro h1 {
+    font-weight: 800;
+    font-size: 7rem;
+    line-height: 1;
+    margin: 0;
+    text-align: left;
+}
+
+.home-intro p {
+    font-size: 1.7rem;
+    text-align: left;
+}
+
+.home-intro button {
+    background-color: transparent;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    /*    border-radius: 15px;*/
+    font-weight: 300;
+}
+
+.home-intro button:hover {
+    /*    background-image: linear-gradient(90deg, #b209b2, #4940d6);*/
+    background-color: black;
+    color: white;
+}
+
+.big-logo {
+    width: 14vw;
+    position: absolute;
+    width: 40vw;
+    left: 96%;
+    top: 72%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 footer {
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
     display: grid;
     grid-template-columns: repeat(3, 33vw);
     grid-template-rows: repeat(3, auto);
@@ -37,8 +120,30 @@ footer {
     padding-bottom: 3rem;
 }
 
+footer h4 {
+    color: #b209b2;
+}
+
+footer div p {
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+footer div a {
+    text-decoration: none;
+    color: white;
+}
+
+footer div a p {
+    font-size: 1.2rem;
+}
+
 .some-icon {
     width: 6%;
+    padding: 1rem;
 }
 
 /*-----GRID STYLING-----*/
@@ -55,6 +160,7 @@ footer {
 }
 
 .grid {
+    padding-top: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -75,6 +181,12 @@ footer {
     grid-column-gap: 60px;
     grid-row-gap: 25px;
     position: relative;
+
+}
+
+.post-wrap {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 
@@ -91,7 +203,7 @@ section .venue {
     font-size: 1.3em;
     font-weight: 600;
     letter-spacing: 2px;
-    color: #F25244;
+    color: #b209b2;
 }
 
 section .venue span {
@@ -105,7 +217,7 @@ section .responsibilities {
     font-size: 1.3em;
     font-weight: 600;
     letter-spacing: 2px;
-    color: #F25244;
+    color: #b209b2;
 
 }
 
@@ -119,7 +231,7 @@ section .contact {
     font-size: 1.3em;
     font-weight: 600;
     letter-spacing: 2px;
-    color: #F25244;
+    color: #b209b2;
 }
 
 section .contact span {
@@ -135,6 +247,13 @@ section .contact span {
     background-size: cover;
     background-position: center center;
     position: relative;
+}
+
+.scroll-down {
+    position: absolute;
+    left: 60%;
+    top: 95%;
+    transform: translate(-50%, -50%);
 }
 
 figure img {
@@ -167,6 +286,8 @@ figure img {
     transform: translate(-50%, -50%);
 }
 
+
+
 .intro p {
     font-size: 1.2em;
     line-height: 1.7;
@@ -178,6 +299,7 @@ h1 {
 
 h1 .headline {
     font-size: 2.5em;
+
 
 }
 
@@ -191,8 +313,10 @@ h3 {
 }
 
 a {
-    text-decoration: underline;
-    color: #808080;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+
 }
 
 /*----CATEGORIES----*/
@@ -206,7 +330,17 @@ a {
 
 }
 
+.g1 p {
+    color: #b209b2;
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
+
+
+
+
+
 
 /*--------NAV BAR---------*/
 
@@ -255,7 +389,7 @@ nav {
 
 
 .nav-links a:hover {
-    color: hotpink;
+    color: #b209b2;
 }
 
 .nav-links .current {
@@ -365,4 +499,48 @@ nav {
 
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -5px);
+}
+
+
+/*----ANIMATION-----*/
+
+.bounce {
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation: bounce 3.6s ease infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    5.55556% {
+        transform: translateY(0);
+    }
+
+    11.11111% {
+        transform: translateY(0);
+    }
+
+    22.22222% {
+        transform: translateY(-15px);
+    }
+
+    27.77778% {
+        transform: translateY(0);
+    }
+
+    33.33333% {
+        transform: translateY(-15px);
+    }
+
+    44.44444% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

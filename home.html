@@ -14,13 +14,13 @@
 
         <nav class="sticky" id="navbar">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.svg" style="width: 30%"></a>
+                <a href="home.html"><img src="images/logo.svg" style="width: 30%"></a>
             </div>
 
 
 
             <ul class="nav-links">
-                <li><a class="current" href="index.html">HOME</a></li>
+                <li><a class="current" href="home.html">HOME</a></li>
                 <li><a href="index.html">VOLUNTEER</a></li>
                 <li><a href="index.html">EVENTS</a></li>
                 <li><a href="index.html">FOOD &amp; DRINK</a></li>
@@ -48,6 +48,17 @@
 
         <section class="stage">
 
+            <div class="home-intro">
+                <h1>Volunteer at Huset</h1>
+                <p>Do you want to Volunteer with us? Discover all the exciting volunteer opportunities Huset offers to suit every personality and interest.</p>
+                <a href="index.html"><button>YES I WANT TO KNOW MORE</button></a>
+
+            </div>
+
+            <div class="big-logo">
+                <img src="images/big-logo.svg" style="width: 14vw">
+            </div>
+
 
         </section>
 
@@ -58,6 +69,11 @@
 
     <footer>
         <div>
+            <h4>VOLUNTEER</h4>
+            <p>The Volunteer Team</p>
+            <p>Game Guru</p>
+            <p>The Theatre House</p>
+            <p>The Cinema</p>
 
 
         </div>
@@ -166,7 +182,7 @@
             if (prevScrollpos > currentScrollPos || currentScrollPos < 100) {
                 document.getElementById("navbar").style.top = "0";
             } else {
-                document.getElementById("navbar").style.top = "-9vh";
+                document.getElementById("navbar").style.top = "-10vh";
             }
             prevScrollpos = currentScrollPos;
         }
